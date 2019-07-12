@@ -40,8 +40,7 @@ class Match{
     private var imageA:UIImage? = nil
     private var imageB:UIImage? = nil
     
-    
-    init(teamA:String,teamB:String,result:String,date:String,cover:UIImage? = nil) {
+    init(teamA:String,teamB:String,result:String,date:String,coverA:UIImage? = nil, coverB:UIImage? = nil) {
         self.nameTeamA = teamA
         self.nameTeamB = teamB
         self.result = result

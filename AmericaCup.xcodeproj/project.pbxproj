@@ -8,14 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1D16628D22CD642100BF295A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D16628C22CD642100BF295A /* AppDelegate.swift */; };
-		1D16628F22CD642100BF295A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D16628E22CD642100BF295A /* ViewController.swift */; };
+		1D16628F22CD642100BF295A /* MatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D16628E22CD642100BF295A /* MatchViewController.swift */; };
 		1D16629222CD642200BF295A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D16629022CD642200BF295A /* Main.storyboard */; };
 		1D16629422CD646500BF295A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D16629322CD646500BF295A /* Assets.xcassets */; };
 		1D16629722CD646500BF295A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D16629522CD646500BF295A /* LaunchScreen.storyboard */; };
 		1D1662A222CD646600BF295A /* AmericaCupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1662A122CD646600BF295A /* AmericaCupTests.swift */; };
 		1D1662AD22CD646600BF295A /* AmericaCupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1662AC22CD646600BF295A /* AmericaCupUITests.swift */; };
 		1D2C698322D58BBA00F237F8 /* CustomTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C698222D58BB900F237F8 /* CustomTabBarViewController.swift */; };
-		1DD2534222D3E3D5007FED09 /* MatchesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534122D3E3D5007FED09 /* MatchesTableViewController.swift */; };
+		1D7944C722D6F27100630C40 /* MatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7944C622D6F27100630C40 /* MatchTableViewController.swift */; };
 		1DD2534522D3E996007FED09 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534422D3E996007FED09 /* Match.swift */; };
 		1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534622D3ECAE007FED09 /* MatchesManager.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +40,7 @@
 /* Begin PBXFileReference section */
 		1D16628922CD642000BF295A /* AmericaCup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmericaCup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D16628C22CD642100BF295A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1D16628E22CD642100BF295A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1D16628E22CD642100BF295A /* MatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchViewController.swift; sourceTree = "<group>"; };
 		1D16629122CD642200BF295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D16629322CD646500BF295A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D16629622CD646500BF295A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		1D1662AC22CD646600BF295A /* AmericaCupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmericaCupUITests.swift; sourceTree = "<group>"; };
 		1D1662AE22CD646600BF295A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D2C698222D58BB900F237F8 /* CustomTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewController.swift; sourceTree = "<group>"; };
-		1DD2534122D3E3D5007FED09 /* MatchesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesTableViewController.swift; sourceTree = "<group>"; };
+		1D7944C622D6F27100630C40 /* MatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewController.swift; sourceTree = "<group>"; };
 		1DD2534422D3E996007FED09 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		1DD2534622D3ECAE007FED09 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,14 +107,14 @@
 			children = (
 				1DD2534322D3E94E007FED09 /* models */,
 				1D16628C22CD642100BF295A /* AppDelegate.swift */,
-				1D16628E22CD642100BF295A /* ViewController.swift */,
+				1D16628E22CD642100BF295A /* MatchViewController.swift */,
 				1D16629022CD642200BF295A /* Main.storyboard */,
 				1D16629322CD646500BF295A /* Assets.xcassets */,
 				1D16629522CD646500BF295A /* LaunchScreen.storyboard */,
 				1D16629822CD646500BF295A /* Info.plist */,
-				1DD2534122D3E3D5007FED09 /* MatchesTableViewController.swift */,
 				1DD2534622D3ECAE007FED09 /* MatchesManager.swift */,
 				1D2C698222D58BB900F237F8 /* CustomTabBarViewController.swift */,
+				1D7944C622D6F27100630C40 /* MatchTableViewController.swift */,
 			);
 			path = AmericaCup;
 			sourceTree = "<group>";
@@ -276,11 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D16628F22CD642100BF295A /* ViewController.swift in Sources */,
+				1D16628F22CD642100BF295A /* MatchViewController.swift in Sources */,
 				1D16628D22CD642100BF295A /* AppDelegate.swift in Sources */,
 				1D2C698322D58BBA00F237F8 /* CustomTabBarViewController.swift in Sources */,
-				1DD2534222D3E3D5007FED09 /* MatchesTableViewController.swift in Sources */,
 				1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */,
+				1D7944C722D6F27100630C40 /* MatchTableViewController.swift in Sources */,
 				1DD2534522D3E996007FED09 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
