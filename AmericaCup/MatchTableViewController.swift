@@ -72,11 +72,10 @@ class MatchTableViewController: UITableViewController {
         cell.result?.text = match.result
         cell.date?.text = match.date
         
-        cell.imageTeamA?.image = match.coverA
-        cell.imageTeamB?.image = match.coverB
+        cell.imageTeamA?.image = UIImage(named: match.nameTeamA.lowercased()+".png")
+        cell.imageTeamB?.image = UIImage(named: match.nameTeamB.lowercased()+".png")
         
         return cell
-        
     }
     
     // Prepare the segue before navigation

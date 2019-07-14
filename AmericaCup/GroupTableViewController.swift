@@ -14,6 +14,11 @@ class GroupTableViewCell: UITableViewCell {
     @IBOutlet weak var team2: UILabel!
     @IBOutlet weak var team3: UILabel!
     @IBOutlet weak var team4: UILabel!
+    @IBOutlet weak var imageTeam1: UIImageView!
+    @IBOutlet weak var imageTeam2: UIImageView!
+    @IBOutlet weak var imageTeam3: UIImageView!
+    @IBOutlet weak var imageTeam4: UIImageView!
+    
 }
 
 class GroupTableViewController: UITableViewController {
@@ -63,10 +68,18 @@ class GroupTableViewController: UITableViewController {
         
         //Set the text, label an image for each according to the format design we chose for the cell
         cell.nameGroup?.text = group.nameGroup
+        
         cell.team1?.text = group.teams[0].nombre
+        cell.imageTeam1?.image = UIImage(named: group.teams[0].nombre.lowercased()+".png")
+        
         cell.team2?.text = group.teams[1].nombre
+        cell.imageTeam2?.image = UIImage(named: group.teams[1].nombre.lowercased()+".png")
+        
         cell.team3?.text = group.teams[2].nombre
+        cell.imageTeam3?.image = UIImage(named: group.teams[2].nombre.lowercased()+".png")
+        
         cell.team4?.text = group.teams[3].nombre
+        cell.imageTeam4?.image = UIImage(named: group.teams[3].nombre.lowercased()+".png")
         return cell
         
     }

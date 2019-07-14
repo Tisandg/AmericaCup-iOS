@@ -47,9 +47,7 @@ class FavoritesTableViewController: UITableViewController {
         
         //Set the text, label an image for each according to the format design we chose for the cell
         cell.textLabel?.text = team.nombre
-        cell.imageView?.image = team.cover
-        return cell
-        
+        cell.imageView?.image = UIImage(named: team.nombre.lowercased()+".png")
 
         return cell
     }

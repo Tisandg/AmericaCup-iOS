@@ -37,10 +37,10 @@ class MatchesManager {
         return [
             Match(teamA:"Colombia",teamB:"Qatar",result:"1–0",date:"05/07/2019"),
             Match(teamA:"Argentina",teamB:"Paraguay",result:"1–1",date:"05/07/2019"),
-            Match(teamA:"Brasil",teamB:"Bolivia",result:"3–0",date:"05/07/2019"),
+            Match(teamA:"Brazil",teamB:"Bolivia",result:"3–0",date:"05/07/2019"),
             Match(teamA:"Chile",teamB:"Ecuador",result:"2–1",date:"05/07/2019"),
             Match(teamA:"Paraguay",teamB:"Colombia",result:"0–1",date:"05/07/2019"),
-            Match(teamA:"Brasil",teamB:"Peru",result:"5–0", date:"05/07/2019")
+            Match(teamA:"Brazil",teamB:"Peru",result:"5–0", date:"05/07/2019")
         ]
     }
     
