@@ -177,14 +177,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudo" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-5n-FVk">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudo" translatesAutoresizingMaskIntoConstraints="NO" id="pyv-5n-FVk">
                                 <rect key="frame" x="45.5" y="94" width="70" height="70"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Krw-zf-N4D"/>
                                     <constraint firstAttribute="width" constant="70" id="a22-Tp-7Fd"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="6Uq-6p-mvp" appends="YES" id="myY-fU-Cvv"/>
+                                </connections>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudo" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-BC-nhE">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="escudo" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-BC-nhE">
                                 <rect key="frame" x="260" y="94" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Gb1-Rg-X8t"/>
@@ -250,8 +254,47 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPr-Rw-3Xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="6Uq-6p-mvp"/>
             </objects>
             <point key="canvasLocation" x="1815.2" y="-949.47526236881572"/>
+        </scene>
+        <!--Team Detail-->
+        <scene sceneID="Twe-nu-o7y">
+            <objects>
+                <viewController storyboardIdentifier="TeamDetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eu6-XZ-q2n" customClass="TeamDetailViewController" customModule="AmericaCup" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vfG-M5-dcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nombre del equipo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TP4-9x-fbt">
+                                <rect key="frame" x="114" y="196" width="146" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="colombia" translatesAutoresizingMaskIntoConstraints="NO" id="j53-el-ItZ">
+                                <rect key="frame" x="142.5" y="88" width="90" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YmJ-B5-voX"/>
+                                    <constraint firstAttribute="width" constant="90" id="agP-dV-hWl"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TP4-9x-fbt" firstAttribute="centerX" secondItem="vfG-M5-dcZ" secondAttribute="centerX" id="Hcl-qZ-fiN"/>
+                            <constraint firstItem="j53-el-ItZ" firstAttribute="centerX" secondItem="vfG-M5-dcZ" secondAttribute="centerX" id="l6z-Za-ToC"/>
+                            <constraint firstItem="TP4-9x-fbt" firstAttribute="top" secondItem="j53-el-ItZ" secondAttribute="bottom" constant="28" id="qCI-FD-aaV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="b86-pr-aIi"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team Detail" id="IGC-KF-I2D">
+                        <barButtonItem key="rightBarButtonItem" title="Favoritos" id="f6M-6t-R9l"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycg-Ik-R6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3496.8000000000002" y="-937.78110944527748"/>
         </scene>
         <!--America Cup 2019-->
         <scene sceneID="5DF-4N-YT3">
@@ -745,8 +788,27 @@
             </objects>
             <point key="canvasLocation" x="349.60000000000002" y="-206.44677661169416"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tKe-Yg-ZS5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acc-EN-hvq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bma-Fj-DCr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eu6-XZ-q2n" kind="relationship" relationship="rootViewController" id="6Me-68-QjW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7i-Ra-2sK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2609" y="-937"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="colombia" width="580" height="387"/>
         <image name="escudo" width="512" height="512"/>
         <image name="favorites" width="30" height="30"/>
         <image name="groups" width="30" height="30"/>

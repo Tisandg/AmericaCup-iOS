@@ -21,6 +21,7 @@
 		1D3A3B1D22DB8D70001C2483 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A3B1C22DB8D70001C2483 /* FavoritesTableViewController.swift */; };
 		1D3A3B1F22DB8DBC001C2483 /* TeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A3B1E22DB8DBC001C2483 /* TeamManager.swift */; };
 		1D68DD4522DA5A2C00F346EC /* GroupTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D68DD4422DA5A2A00F346EC /* GroupTableViewController.swift */; };
+		1D77C55922DBE077009D459C /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D77C55822DBE077009D459C /* TeamDetailViewController.swift */; };
 		1D7944C722D6F27100630C40 /* MatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7944C622D6F27100630C40 /* MatchTableViewController.swift */; };
 		1DD2534522D3E996007FED09 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534422D3E996007FED09 /* Match.swift */; };
 		1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534622D3ECAE007FED09 /* MatchesManager.swift */; };
@@ -64,6 +65,7 @@
 		1D3A3B1C22DB8D70001C2483 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		1D3A3B1E22DB8DBC001C2483 /* TeamManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamManager.swift; sourceTree = "<group>"; };
 		1D68DD4422DA5A2A00F346EC /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
+		1D77C55822DBE077009D459C /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		1D7944C622D6F27100630C40 /* MatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewController.swift; sourceTree = "<group>"; };
 		1DD2534422D3E996007FED09 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		1DD2534622D3ECAE007FED09 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				1D3A3B1622DB750D001C2483 /* GroupManager.swift */,
 				1D3A3B1C22DB8D70001C2483 /* FavoritesTableViewController.swift */,
 				1D3A3B1E22DB8DBC001C2483 /* TeamManager.swift */,
+				1D77C55822DBE077009D459C /* TeamDetailViewController.swift */,
 			);
 			path = AmericaCup;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				1D16628F22CD642100BF295A /* MatchViewController.swift in Sources */,
 				1D16628D22CD642100BF295A /* AppDelegate.swift in Sources */,
 				1D2C698322D58BBA00F237F8 /* CustomTabBarViewController.swift in Sources */,
+				1D77C55922DBE077009D459C /* TeamDetailViewController.swift in Sources */,
 				1D3A3B1D22DB8D70001C2483 /* FavoritesTableViewController.swift in Sources */,
 				1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */,
 				1D3A3B1722DB750D001C2483 /* GroupManager.swift in Sources */,
