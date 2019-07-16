@@ -67,13 +67,13 @@ class MatchTableViewController: UITableViewController {
         let match = matchesManager.getMatch(at: indexPath.row)
         
         //Set the text, label an image for each according to the format design we chose for the cell
-        cell.teamA?.text = match.nameTeamA
-        cell.teamB?.text = match.nameTeamB
-        cell.result?.text = match.result
-        cell.date?.text = match.date
+        cell.teamA?.text = match.team_a
+        cell.teamB?.text = match.team_b
+        cell.result?.text = match.score
+        cell.date?.text = match.match_date
         
-        cell.imageTeamA?.image = UIImage(named: match.nameTeamA.lowercased()+".png")
-        cell.imageTeamB?.image = UIImage(named: match.nameTeamB.lowercased()+".png")
+        cell.imageTeamA?.image = UIImage(named: match.team_a.lowercased()+".png")
+        cell.imageTeamB?.image = UIImage(named: match.team_b.lowercased()+".png")
         
         return cell
     }

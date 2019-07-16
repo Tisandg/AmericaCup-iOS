@@ -25,6 +25,13 @@
 		1D7944C722D6F27100630C40 /* MatchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7944C622D6F27100630C40 /* MatchTableViewController.swift */; };
 		1DD2534522D3E996007FED09 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534422D3E996007FED09 /* Match.swift */; };
 		1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2534622D3ECAE007FED09 /* MatchesManager.swift */; };
+		1DE0190322DD298B008047F2 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE0190222DD298A008047F2 /* libsqlite3.tbd */; };
+		1DE0192722DD2E38008047F2 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0192022DD2E35008047F2 /* FMDatabasePool.m */; };
+		1DE0192822DD2E38008047F2 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0192122DD2E36008047F2 /* FMDatabaseAdditions.m */; };
+		1DE0192922DD2E38008047F2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DE0192422DD2E37008047F2 /* Info.plist */; };
+		1DE0192A22DD2E38008047F2 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0192622DD2E38008047F2 /* FMDatabaseQueue.m */; };
+		1DE0192D22DD2F34008047F2 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0192B22DD2F33008047F2 /* FMDatabase.m */; };
+		1DE0193022DD2F76008047F2 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE0192E22DD2F76008047F2 /* FMResultSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +76,21 @@
 		1D7944C622D6F27100630C40 /* MatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewController.swift; sourceTree = "<group>"; };
 		1DD2534422D3E996007FED09 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		1DD2534622D3ECAE007FED09 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
+		1DE0190022DD2821008047F2 /* db.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
+		1DE0190222DD298A008047F2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1DE0191E22DD2E33008047F2 /* AmericaCup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmericaCup-Bridging-Header.h"; sourceTree = "<group>"; };
+		1DE0191F22DD2E35008047F2 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		1DE0192022DD2E35008047F2 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		1DE0192122DD2E36008047F2 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		1DE0192222DD2E36008047F2 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		1DE0192322DD2E37008047F2 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		1DE0192422DD2E37008047F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DE0192522DD2E37008047F2 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		1DE0192622DD2E38008047F2 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		1DE0192B22DD2F33008047F2 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		1DE0192C22DD2F34008047F2 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		1DE0192E22DD2F76008047F2 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		1DE0192F22DD2F76008047F2 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE0190322DD298B008047F2 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +126,7 @@
 				1D1662A022CD646600BF295A /* AmericaCupTests */,
 				1D1662AB22CD646600BF295A /* AmericaCupUITests */,
 				1D16628A22CD642000BF295A /* Products */,
+				1DE0190122DD298A008047F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +143,8 @@
 		1D16628B22CD642000BF295A /* AmericaCup */ = {
 			isa = PBXGroup;
 			children = (
+				1DE0190422DD29AE008047F2 /* fmdb */,
+				1DE0190022DD2821008047F2 /* db.sql */,
 				1DD2534322D3E94E007FED09 /* models */,
 				1D16628C22CD642100BF295A /* AppDelegate.swift */,
 				1D16628E22CD642100BF295A /* MatchViewController.swift */,
@@ -164,6 +190,34 @@
 				1D3A3B1A22DB76B6001C2483 /* Team.swift */,
 			);
 			path = models;
+			sourceTree = "<group>";
+		};
+		1DE0190122DD298A008047F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1DE0190222DD298A008047F2 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1DE0190422DD29AE008047F2 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				1DE0192F22DD2F76008047F2 /* FMResultSet.h */,
+				1DE0192E22DD2F76008047F2 /* FMResultSet.m */,
+				1DE0192C22DD2F34008047F2 /* FMDatabase.h */,
+				1DE0192B22DD2F33008047F2 /* FMDatabase.m */,
+				1DE0192322DD2E37008047F2 /* FMDatabaseAdditions.h */,
+				1DE0192122DD2E36008047F2 /* FMDatabaseAdditions.m */,
+				1DE0192222DD2E36008047F2 /* FMDatabasePool.h */,
+				1DE0192022DD2E35008047F2 /* FMDatabasePool.m */,
+				1DE0192522DD2E37008047F2 /* FMDatabaseQueue.h */,
+				1DE0192622DD2E38008047F2 /* FMDatabaseQueue.m */,
+				1DE0191F22DD2E35008047F2 /* FMDB.h */,
+				1DE0192422DD2E37008047F2 /* Info.plist */,
+				1DE0191E22DD2E33008047F2 /* AmericaCup-Bridging-Header.h */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +288,7 @@
 				TargetAttributes = {
 					1D16628822CD642000BF295A = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					1D16629C22CD646600BF295A = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -270,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DE0192922DD2E38008047F2 /* Info.plist in Resources */,
 				1D16629722CD646500BF295A /* LaunchScreen.storyboard in Resources */,
 				1D16629422CD646500BF295A /* Assets.xcassets in Resources */,
 				1D16629222CD642200BF295A /* Main.storyboard in Resources */,
@@ -301,15 +357,20 @@
 				1D68DD4522DA5A2C00F346EC /* GroupTableViewController.swift in Sources */,
 				1D3A3B1F22DB8DBC001C2483 /* TeamManager.swift in Sources */,
 				1D16628F22CD642100BF295A /* MatchViewController.swift in Sources */,
+				1DE0192D22DD2F34008047F2 /* FMDatabase.m in Sources */,
 				1D16628D22CD642100BF295A /* AppDelegate.swift in Sources */,
+				1DE0193022DD2F76008047F2 /* FMResultSet.m in Sources */,
 				1D2C698322D58BBA00F237F8 /* CustomTabBarViewController.swift in Sources */,
 				1D77C55922DBE077009D459C /* TeamDetailViewController.swift in Sources */,
 				1D3A3B1D22DB8D70001C2483 /* FavoritesTableViewController.swift in Sources */,
 				1DD2534722D3ECAE007FED09 /* MatchesManager.swift in Sources */,
+				1DE0192A22DD2E38008047F2 /* FMDatabaseQueue.m in Sources */,
 				1D3A3B1722DB750D001C2483 /* GroupManager.swift in Sources */,
 				1D7944C722D6F27100630C40 /* MatchTableViewController.swift in Sources */,
+				1DE0192722DD2E38008047F2 /* FMDatabasePool.m in Sources */,
 				1D3A3B1B22DB76B6001C2483 /* Team.swift in Sources */,
 				1DD2534522D3E996007FED09 /* Match.swift in Sources */,
+				1DE0192822DD2E38008047F2 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AmericaCup/Info.plist;
@@ -492,6 +554,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tisandg.AmericaCup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AmericaCup/fmdb/AmericaCup-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -501,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AmericaCup/Info.plist;
@@ -511,6 +576,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tisandg.AmericaCup;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "AmericaCup/fmdb/AmericaCup-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

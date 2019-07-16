@@ -25,10 +25,10 @@ class MatchViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         //If match object is not null (e.g. an update operation), fill out the form fields with Book data
         if let match = match {
-            nameTeamA.text = match.nameTeamA
-            nameTeamB.text = match.nameTeamB
-            resultTextField.text = match.result
-            dateTextField.text = match.date
+            nameTeamA.text = match.team_a
+            nameTeamB.text = match.team_b
+            resultTextField.text = match.score
+            dateTextField.text = match.match_date
             navigationItem.title = "Match Detail"
         }
         
