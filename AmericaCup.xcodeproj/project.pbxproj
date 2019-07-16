@@ -74,9 +74,9 @@
 		1D68DD4422DA5A2A00F346EC /* GroupTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupTableViewController.swift; sourceTree = "<group>"; };
 		1D77C55822DBE077009D459C /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
 		1D7944C622D6F27100630C40 /* MatchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewController.swift; sourceTree = "<group>"; };
+		1D801A2722DE7747005B2384 /* db.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.db; sourceTree = "<group>"; };
 		1DD2534422D3E996007FED09 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		1DD2534622D3ECAE007FED09 /* MatchesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesManager.swift; sourceTree = "<group>"; };
-		1DE0190022DD2821008047F2 /* db.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = db.sql; sourceTree = "<group>"; };
 		1DE0190222DD298A008047F2 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1DE0191E22DD2E33008047F2 /* AmericaCup-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AmericaCup-Bridging-Header.h"; sourceTree = "<group>"; };
 		1DE0191F22DD2E35008047F2 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
@@ -143,8 +143,8 @@
 		1D16628B22CD642000BF295A /* AmericaCup */ = {
 			isa = PBXGroup;
 			children = (
+				1D801A2722DE7747005B2384 /* db.db */,
 				1DE0190422DD29AE008047F2 /* fmdb */,
-				1DE0190022DD2821008047F2 /* db.sql */,
 				1DD2534322D3E94E007FED09 /* models */,
 				1D16628C22CD642100BF295A /* AppDelegate.swift */,
 				1D16628E22CD642100BF295A /* MatchViewController.swift */,
