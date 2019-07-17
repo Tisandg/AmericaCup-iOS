@@ -9,7 +9,20 @@
 import Foundation
 import UIKit
 
-class Match{
+internal struct Key {
+    static let match_id = "match_id"
+    static let match_id_team_a = "match_id_team_a"
+    static let match_id_team_b = "match_id_team_b"
+    static let team_a = "teamA"
+    static let team_b = "teamB"
+    static let score = "score"
+    static let match_date = "match_date"
+    static let match_hour = "match_hour"
+    static let match_stadium = "match_stadium"
+}
+
+
+struct Match{
     
     var match_id:Int
     var match_id_team_a:Int
@@ -58,5 +71,29 @@ class Match{
         self.match_hour = hour
         self.match_stadium = stadium
         self.group_id = idGroup ?? 1
+    }
+    
+    init?(rs:FMResultSet) {
+        let match_id = rs.int(forColumn: Key.match_id)
+        let match_id_team_a = rs.int(forColumn: Key.match_id_team_a)
+        let match_id_team_b = rs.int(forColumn: Key.match_id_team_b)
+        guard let team_a = rs.string(forColumn: Key.team_a),
+            let team_b = rs.string(forColumn: Key.team_b),
+            let score = rs.string(forColumn: Key.score),
+            let match_date = rs.string(forColumn: Key.match_date),
+            let match_hour = rs.string(forColumn: Key.match_hour),
+            let match_stadium = rs.string(forColumn: Key.match_stadium)
+        else{   return nil  }
+        self.init(idMatch:Int(match_id),
+                  idTeamA:Int(match_id_team_a),
+                  idTeamB:Int(match_id_team_b),
+                  teamA:team_a,
+                  teamB:team_b,
+                  result:score,
+                  date:match_date,
+                  hour:match_hour,
+                  stadium:match_stadium,
+                  idGroup:1
+        )
     }
 }
