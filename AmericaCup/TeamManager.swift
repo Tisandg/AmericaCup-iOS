@@ -29,8 +29,7 @@ class TeamManager{
     //Return a dummny collection of books according to Book structure
     private func sampleFavorites()->[Team] {
         return [
-            Team(nombre: "Colombia", ganados: 3, empatados: 0, perdidos: 0, puntos: 9),
-            Team(nombre: "Brazil", ganados: 2, empatados: 1, perdidos: 0, puntos: 7)
+            
         ]
     }
 

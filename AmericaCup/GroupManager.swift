@@ -8,6 +8,40 @@
 
 import Foundation
 
+// Get a URL to Application Support directory
+private var appSupportDirectory:URL = {
+    let url = FileManager().urls(for:.applicationSupportDirectory,in: .userDomainMask).first!
+    //Checks if directory exists
+    if !FileManager().fileExists(atPath: url.path) {
+        //Creates directory if necessary
+        do {
+            try FileManager().createDirectory(at: url, withIntermediateDirectories: false)
+        } catch let error as NSError {
+            print("\(error.localizedDescription)")
+        }
+        
+    }
+    //Returns the path
+    return url
+}()
+
+//Gets URL to db.sql file
+private var dbFile:URL = {
+    let filePath = appSupportDirectory.appendingPathComponent("db").appendingPathExtension("db")
+    print(filePath)
+    if !FileManager().fileExists(atPath: filePath.path) {
+        if let bundleFilePath = Bundle.main.resourceURL?.appendingPathComponent("db").appendingPathExtension("db") {
+            do {
+                try FileManager().copyItem(at: bundleFilePath, to: filePath)
+            } catch let error as NSError {
+                //fingers crossed
+                print("\(error.localizedDescription)")
+            }
+        }
+    }
+    return filePath
+}()
+
 class GroupManager {
     //Store the groups collection
     private lazy var groups:[Group] = self.loadGroups()
@@ -22,25 +56,65 @@ class GroupManager {
     //Return the books collection
     private func loadGroups()->[Group] {
         //for now, loads a dummy hard-coded books collection
-        return sampleGroups()
+        return retrieveGroups() ?? []
+        //return sampleGroups()
     }
 
     //Add a book to the collection
     func addGroup(_ group:Group) {
         groups.append(group)
     }
-
-    //Return a dummny collection of books according to Book structure
-    private func sampleGroups()->[Group] {
-        let team1 = Team(nombre: "Colombia", ganados: 3, empatados: 0, perdidos: 0, puntos: 9)
-        let team2 = Team(nombre: "Argentina", ganados: 3, empatados: 0, perdidos: 0, puntos: 9)
-        let team3 = Team(nombre: "Paraguay", ganados: 3, empatados: 0, perdidos: 0, puntos: 9)
-        let team4 = Team(nombre: "Qatar", ganados: 3, empatados: 0, perdidos: 0, puntos: 9)
-        let teams = [team1, team2, team3, team4]
-        return [
-            Group(nameGroup:"Group A", teams:teams),
-            Group(nameGroup:"Group B",teams:teams),
-            Group(nameGroup:"Group C",teams:teams)
-        ]
+    
+    //Uses the FMDB wrapper to get a reference to the Books database on the specific path
+    public func getOpenDB()->FMDatabase? {
+        let db = FMDatabase(path: dbFile.path)
+        guard db.open() else {
+            print("Unable to open database")
+            return nil
+        }
+        return db
     }
+    
+    //Retrieves all books from Books database
+    func retrieveGroups() -> [Group]? {
+        //Opens a connection to DB
+        guard let db = getOpenDB() else { return nil }
+        var groups:[Group] = []
+        do {
+            //Queries database for all books
+            let rs = try db.executeQuery(
+                "SELECT * FROM group", values: nil)
+            
+            //Iterates throughout the Result Set
+            while rs.next() {
+                
+                //Creates a Group object from Result Set
+                if var group = Group(rs: rs) {
+                    
+                    var teams:[Team] = []
+                    let rsTeams = try db.executeQuery(
+                        "SELECT * FROM team WHERE group_id = "+String(group.id), values: nil)
+                    while rsTeams.next() {
+                        //Add teams
+                        if let team = Team(rs: rsTeams) {
+                            teams.append(team)
+                        }
+                    }
+                    
+                    group.teams = teams
+                    groups.append(group)
+                    
+                }
+            }
+            //Second: Save Teams per group
+            
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        //Closes the connection to database
+        db.close()
+        return groups
+    }
+
+
 }
