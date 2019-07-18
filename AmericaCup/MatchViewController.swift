@@ -22,13 +22,15 @@ class MatchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Do any additional setup after loadißng the view, typically from a nib.
         //If match object is not null (e.g. an update operation), fill out the form fields with Book data
         if let match = match {
             nameTeamA.text = match.team_a
             nameTeamB.text = match.team_b
             resultTextField.text = match.score
             dateTextField.text = match.match_date
+            imageTeamA.image = UIImage(named: match.team_a.lowercased()+".png")
+            imageTeamB.image = UIImage(named: match.team_b.lowercased()+".png")
             navigationItem.title = "Match Detail"
         }
         

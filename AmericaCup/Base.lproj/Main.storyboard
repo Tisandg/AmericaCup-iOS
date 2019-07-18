@@ -201,7 +201,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-z9-oKF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxj-z9-oKF">
                                 <rect key="frame" x="149" y="144" width="80" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -244,6 +244,7 @@
                             <constraint firstItem="yor-BR-ImZ" firstAttribute="width" secondItem="bd4-hb-txm" secondAttribute="width" id="l2v-KD-b3j"/>
                             <constraint firstItem="qaj-zd-Zcm" firstAttribute="top" secondItem="yor-BR-ImZ" secondAttribute="bottom" constant="25" id="mFh-aJ-drM"/>
                             <constraint firstItem="JCU-92-h2I" firstAttribute="top" secondItem="vCu-6I-gXM" secondAttribute="top" constant="30" id="mfh-iu-GGW"/>
+                            <constraint firstItem="Zxj-z9-oKF" firstAttribute="top" secondItem="f9s-cH-54w" secondAttribute="bottom" constant="8" id="mml-Fz-v2C"/>
                             <constraint firstItem="f9s-cH-54w" firstAttribute="leading" secondItem="pyv-5n-FVk" secondAttribute="trailing" constant="40" id="pFg-BR-9Zc"/>
                             <constraint firstItem="bd4-hb-txm" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="pHi-xJ-UVF"/>
                             <constraint firstItem="f9s-cH-54w" firstAttribute="top" secondItem="vCu-6I-gXM" secondAttribute="top" constant="50" id="xd3-7j-sIN"/>
