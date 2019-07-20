@@ -34,28 +34,11 @@ class MatchViewController: UIViewController {
             navigationItem.title = "Match Detail"
         }
         
-        let tapGestureRecognizer =
-            UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tapGestureRecognizer.numberOfTouchesRequired = 1
-        tapGestureRecognizer.numberOfTapsRequired = 1
-        imageTeamA.addGestureRecognizer(tapGestureRecognizer)
-        
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func handleTap(_ sender: UITapGestureRecognizer) {
-        let mainStoryBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        guard let destinationController = mainStoryBoard.instantiateViewController(withIdentifier: "TeamDetailController") as? TeamDetailViewController else{
-            print("Couldn t find the view controller")
-            return
-        }
-        present(destinationController, animated: true, completion: nil)
-        //performSegue(withIdentifier: "TeamDetailViewController", sender: nil)
     }
 
 }

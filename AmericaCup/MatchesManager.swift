@@ -20,7 +20,6 @@ private var appSupportDirectory:URL = {
         } catch let error as NSError {
             print("\(error.localizedDescription)")
         }
-        
     }
     //Returns the path
     return url
@@ -44,7 +43,6 @@ private var dbFile:URL = {
 }()
 
 class MatchesManager {
-    
     
     //Store the books collection
     private lazy var matches:[Match] = self.loadMatches()
@@ -110,10 +108,7 @@ class MatchesManager {
         var matches:[Match] = []
         do {
             //Queries database for all books
-            let rs = try db.executeQuery(
-                /*As long as there is no a explicit ID field in database, SQLite creates a ROWID field
-                 to store an autoincrement ID for the database records*/
-                "SELECT * FROM Match", values: nil)
+            let rs = try db.executeQuery("SELECT * FROM Match", values: nil)
             //Iterates throughout the Result Set
             while rs.next() {
                 //Creates a Book object from Result Set

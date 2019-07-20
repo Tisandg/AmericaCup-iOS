@@ -42,9 +42,11 @@ private var dbFile:URL = {
     return filePath
 }()
 
-class GroupManager {
+class GroupManager{
+    
     //Store the groups collection
     private lazy var groups:[Group] = self.loadGroups()
+    
     //Store the number of books in the collection
     var groupCount:Int {return groups.count}
 
@@ -82,32 +84,20 @@ class GroupManager {
         var groups:[Group] = []
         do {
             //Queries database for all books
-            let rs = try db.executeQuery(
-                "SELECT * FROM group", values: nil)
-            
-            //Iterates throughout the Result Set
+            let rs = try db.executeQuery("SELECT * FROM 'Group'",values:nil)
             while rs.next() {
-                
-                //Creates a Group object from Result Set
                 if var group = Group(rs: rs) {
-                    
                     var teams:[Team] = []
-                    let rsTeams = try db.executeQuery(
-                        "SELECT * FROM team WHERE group_id = "+String(group.id), values: nil)
+                    let rsTeams = try db.executeQuery("SELECT * FROM 'Team' WHERE group_id = (?)",values:[group.id])
                     while rsTeams.next() {
-                        //Add teams
                         if let team = Team(rs: rsTeams) {
                             teams.append(team)
                         }
                     }
-                    
                     group.teams = teams
                     groups.append(group)
-                    
                 }
             }
-            //Second: Save Teams per group
-            
         } catch {
             print("failed: \(error.localizedDescription)")
         }
@@ -115,6 +105,8 @@ class GroupManager {
         db.close()
         return groups
     }
+    
+    
 
 
 }

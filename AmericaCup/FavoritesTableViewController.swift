@@ -52,5 +52,23 @@ class FavoritesTableViewController: UITableViewController {
         return cell
     }
     
+    // Prepare the segue before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let selectedIndexPath = tableView.indexPathForSelectedRow,
+
+            let teamDeatilController = segue.destination
+                as? TeamDetailViewController {
+            
+            teamDeatilController.team =
+                teamManager.getFavorite(at: selectedIndexPath.row)
+
+        } else if let navController = segue.destination
+            as? UINavigationController,
+            
+            let teamDeatilController = navController.topViewController
+                as? TeamDetailViewController {
+        }
+    }
 
 }

@@ -53,14 +53,14 @@ class GroupTableViewController: UITableViewController {
         cell.team1?.text = group.teams[0].team_name
         cell.imageTeam1?.image = UIImage(named: group.teams[0].team_name.lowercased()+".png")
         
-        cell.team2?.text = group.teams[1].team_name
-        cell.imageTeam2?.image = UIImage(named: group.teams[1].team_name.lowercased()+".png")
+        cell.team2?.text = group.teams[0].team_name
+        cell.imageTeam2?.image = UIImage(named: group.teams[0].team_name.lowercased()+".png")
         
-        cell.team3?.text = group.teams[2].team_name
-        cell.imageTeam3?.image = UIImage(named: group.teams[2].team_name.lowercased()+".png")
+        cell.team3?.text = group.teams[0].team_name
+        cell.imageTeam3?.image = UIImage(named: group.teams[0].team_name.lowercased()+".png")
         
-        cell.team4?.text = group.teams[3].team_name
-        cell.imageTeam4?.image = UIImage(named: group.teams[3].team_name.lowercased()+".png")
+        cell.team4?.text = group.teams[0].team_name
+        cell.imageTeam4?.image = UIImage(named: group.teams[0].team_name.lowercased()+".png")
         return cell
         
     }
