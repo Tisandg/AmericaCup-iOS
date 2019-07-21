@@ -17,8 +17,7 @@ internal struct Key {
     static let team_b = "team_b"
     static let score = "score"
     static let match_date = "match_date"
-    static let match_hour = "match_hour"
-    static let match_stadium = "match_stadium"
+    static let status = "status"
 }
 
 
@@ -31,8 +30,7 @@ struct Match{
     var team_b:String
     var score:String
     var match_date:String
-    var match_hour:String
-    var match_stadium:String
+    var status:String
     var group_id:Int
     
     static let defaultCover = UIImage(named: "escudo.png")!
@@ -60,7 +58,7 @@ struct Match{
     private var imageA:UIImage? = nil
     private var imageB:UIImage? = nil
     
-    init(idMatch: Int, idTeamA:Int, idTeamB:Int, teamA:String,teamB:String,result:String,date:String,hour:String,stadium:String, idGroup:Int? = nil,coverA:UIImage? = nil, coverB:UIImage? = nil) {
+    init(idMatch: Int, idTeamA:Int, idTeamB:Int, teamA:String,teamB:String,result:String,date:String,status:String, idGroup:Int? = nil,coverA:UIImage? = nil, coverB:UIImage? = nil) {
         self.match_id = idMatch
         self.match_id_team_a = idTeamA
         self.match_id_team_b = idTeamB
@@ -68,8 +66,7 @@ struct Match{
         self.team_b = teamB
         self.score = result
         self.match_date = date
-        self.match_hour = hour
-        self.match_stadium = stadium
+        self.status = status
         self.group_id = idGroup ?? 1
     }
     
@@ -81,8 +78,7 @@ struct Match{
             let team_b = rs.string(forColumn: Key.team_b),
             let score = rs.string(forColumn: Key.score),
             let match_date = rs.string(forColumn: Key.match_date),
-            let match_hour = rs.string(forColumn: Key.match_hour),
-            let match_stadium = rs.string(forColumn: Key.match_stadium)
+            let status = rs.string(forColumn: Key.status)
         else{   return nil  }
         self.init(idMatch:Int(match_id),
                   idTeamA:Int(match_id_team_a),
@@ -91,8 +87,7 @@ struct Match{
                   teamB:team_b,
                   result:score,
                   date:match_date,
-                  hour:match_hour,
-                  stadium:match_stadium,
+                  status:status,
                   idGroup:1
         )
     }
