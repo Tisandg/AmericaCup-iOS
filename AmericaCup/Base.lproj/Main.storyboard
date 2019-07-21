@@ -207,10 +207,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JCU-92-h2I">
-                                <rect key="frame" x="260" y="94" width="70" height="70"/>
-                                <state key="normal" title="Button" image="escudo"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -220,7 +216,6 @@
                             <constraint firstItem="yor-BR-ImZ" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="7Rn-gZ-U0Z"/>
                             <constraint firstItem="ZxX-5L-Zma" firstAttribute="width" secondItem="bd4-hb-txm" secondAttribute="width" id="7Yl-Ep-EBp"/>
                             <constraint firstItem="lxf-BC-nhE" firstAttribute="leading" secondItem="f9s-cH-54w" secondAttribute="trailing" constant="40" id="7d8-Q5-TD1"/>
-                            <constraint firstItem="vCu-6I-gXM" firstAttribute="trailing" secondItem="JCU-92-h2I" secondAttribute="trailing" constant="45" id="8Sl-pP-b8b"/>
                             <constraint firstItem="Brn-Zu-Amg" firstAttribute="centerX" secondItem="lxf-BC-nhE" secondAttribute="centerX" id="AFG-fy-Mn3"/>
                             <constraint firstItem="u0U-7c-jri" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="CRh-qr-EK7"/>
                             <constraint firstItem="u0U-7c-jri" firstAttribute="top" secondItem="bd4-hb-txm" secondAttribute="bottom" constant="25" id="Erb-e5-l7D"/>
@@ -229,7 +224,6 @@
                             <constraint firstItem="JqO-UW-O5C" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="KdY-jf-XUk"/>
                             <constraint firstItem="pyv-5n-FVk" firstAttribute="top" secondItem="vCu-6I-gXM" secondAttribute="top" constant="30" id="LFO-j8-pY7"/>
                             <constraint firstItem="Zxj-z9-oKF" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="MVr-fw-Xt7"/>
-                            <constraint firstItem="JCU-92-h2I" firstAttribute="leading" secondItem="f9s-cH-54w" secondAttribute="trailing" constant="40" id="Rc6-BX-mK4"/>
                             <constraint firstItem="Brn-Zu-Amg" firstAttribute="centerX" secondItem="lxf-BC-nhE" secondAttribute="centerX" id="Va9-HB-sIG"/>
                             <constraint firstItem="yor-BR-ImZ" firstAttribute="top" secondItem="ZxX-5L-Zma" secondAttribute="bottom" constant="25" id="WQE-Qh-cwQ"/>
                             <constraint firstItem="f1D-IM-gNZ" firstAttribute="top" secondItem="pyv-5n-FVk" secondAttribute="bottom" constant="35" id="Wj0-mU-NFT"/>
@@ -243,7 +237,6 @@
                             <constraint firstItem="bd4-hb-txm" firstAttribute="top" secondItem="vCu-6I-gXM" secondAttribute="top" constant="190" id="hfG-UO-Thn"/>
                             <constraint firstItem="yor-BR-ImZ" firstAttribute="width" secondItem="bd4-hb-txm" secondAttribute="width" id="l2v-KD-b3j"/>
                             <constraint firstItem="qaj-zd-Zcm" firstAttribute="top" secondItem="yor-BR-ImZ" secondAttribute="bottom" constant="25" id="mFh-aJ-drM"/>
-                            <constraint firstItem="JCU-92-h2I" firstAttribute="top" secondItem="vCu-6I-gXM" secondAttribute="top" constant="30" id="mfh-iu-GGW"/>
                             <constraint firstItem="Zxj-z9-oKF" firstAttribute="top" secondItem="f9s-cH-54w" secondAttribute="bottom" constant="8" id="mml-Fz-v2C"/>
                             <constraint firstItem="f9s-cH-54w" firstAttribute="leading" secondItem="pyv-5n-FVk" secondAttribute="trailing" constant="40" id="pFg-BR-9Zc"/>
                             <constraint firstItem="bd4-hb-txm" firstAttribute="centerX" secondItem="rlq-sh-S7X" secondAttribute="centerX" id="pHi-xJ-UVF"/>

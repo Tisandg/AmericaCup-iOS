@@ -89,8 +89,8 @@ class MatchesManager {
             //Performs an update operation on the database
             try db.executeUpdate(
                 //Add a Book record
-                "insert into Match (match_id_team_a, match_id_team_b, team_a, team_b, score, match_date, status, group_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                values: [match.match_id_team_a, match.match_id_team_b, match.team_a, match.team_b, match.score, match.match_date, match.status,1]
+                "insert into Match (match_id, match_id_team_a, match_id_team_b, team_a, team_b, score, match_date, status, group_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                values: [match.match_id, match.match_id_team_a, match.match_id_team_b, match.team_a, match.team_b, match.score, match.match_date, match.status,match.group_id]
             )
             //Gets the ROWID and updates the Id field of the book object
             match.match_id = Int(db.lastInsertRowId)

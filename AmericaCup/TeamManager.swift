@@ -59,6 +59,26 @@ class TeamManager{
         return favorites[index]
     }
     
+    func addTeam(_ team:Team) {
+        var team = team
+        //Adds the record in the database
+        SQLAddTeam(team: &team)
+    }
+    
+    func SQLAddTeam(team:inout Team) {
+        guard let db = getOpenDB() else { return  }
+        do {
+            try db.executeUpdate(
+                "insert into Team (id, name, group_id, favorite, team_detail_id) values (?, ?, ?, ?, ?)",
+                values: [team.team_id, team.team_name, team.group_id, team.favorite, team.team_detail_id]
+            )
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        //Closes the connection to the database
+        db.close()
+    }
+    
     //Uses the FMDB wrapper to get a reference to the Books database on the specific path
     func getOpenDB()->FMDatabase? {
         let db = FMDatabase(path: dbFile.path)

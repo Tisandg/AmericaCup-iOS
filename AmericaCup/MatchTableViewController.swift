@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class MatchTableViewCell: UITableViewCell {
     
@@ -21,16 +23,21 @@ class MatchTableViewCell: UITableViewCell {
 
 class MatchTableViewController: UITableViewController {
     
+    let groupaURL = "https://livescore-api.com/api-client/scores/history.json?key=WJBD7vkDnW1zwvNI&secret=nJZX4HNHgOlDE5LAOneVTyzgvBQ17EKv&league=962"
+    
+    let groupbURL = "https://livescore-api.com/api-client/scores/history.json?key=WJBD7vkDnW1zwvNI&secret=nJZX4HNHgOlDE5LAOneVTyzgvBQ17EKv&league=961"
+    
+    let groupcURL = "https://livescore-api.com/api-client/scores/history.json?key=WJBD7vkDnW1zwvNI&secret=nJZX4HNHgOlDE5LAOneVTyzgvBQ17EKv&league=960"
+    
     var matchesManager:MatchesManager = MatchesManager()
+    var teamManager:TeamManager = TeamManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getMatches(url: groupaURL, idGroup: 1)
+        getMatches(url: groupbURL, idGroup: 2)
+        getMatches(url: groupcURL, idGroup: 3)
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,6 +120,40 @@ class MatchTableViewController: UITableViewController {
             /*Now you have a reference to the BookViewController, and the BooksTableViewController
              can set itself as its delegate.*/
             //matchViewController.delegate = self
+        }
+    }
+    
+    func getMatches(url:String, idGroup:Int){
+        DispatchQueue.main.async {
+            Alamofire.request(url).responseJSON(completionHandler: { (response) in
+                switch response.result{
+                case .success(let value):
+                    //var matches:[Match] = []
+                    let json = JSON(value)
+                    let data = json["data"]
+                    data["match"].array?.forEach({ (m) in
+                        let id = m["id"].intValue
+                        let score = m["ft_score"].stringValue
+                        let team_a = m["home_name"].stringValue
+                        let team_b = m["away_name"].stringValue
+                        let team_a_id = m["home_id"].intValue
+                        let team_b_id = m["away_id"].intValue
+                        let date = m["date"].stringValue
+                        let status = m["status"].stringValue
+                        let match = Match.init(idMatch: id, idTeamA: team_a_id, idTeamB: team_b_id, teamA: team_a, teamB: team_b, result: score, date: date, status: status,idGroup:idGroup)
+                        self.matchesManager.addMatch(match)
+                        
+                        let teamA = Team.init(id: team_a_id, name: team_a, favorite: 0, team_detail_id: 0, group_id: idGroup)
+                        let teamB = Team.init(id: team_b_id, name: team_b, favorite: 0, team_detail_id: 0, group_id: idGroup)
+                        self.teamManager.addTeam(teamA)
+                        self.teamManager.addTeam(teamB)
+                    })
+                    //print(json)
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            })
         }
     }
 
