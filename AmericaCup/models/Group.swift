@@ -18,7 +18,7 @@ struct Group{
     
     var id:Int
     var name:String
-    var teams:[Team] = []
+    var teams:[TeamPosition] = []
     
     init(id:Int, nameGroup:String) {
         self.id = id

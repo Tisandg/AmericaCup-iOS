@@ -69,7 +69,7 @@ class TeamManager{
         guard let db = getOpenDB() else { return  }
         do {
             try db.executeUpdate(
-                "insert into Team (id, name, group_id, favorite, team_detail_id) values (?, ?, ?, ?, ?)",
+                "insert or replace into Team (id, name, group_id, favorite, team_detail_id) values (?, ?, ?, ?, ?)",
                 values: [team.team_id, team.team_name, team.group_id, team.favorite, team.team_detail_id]
             )
         } catch {

@@ -52,7 +52,7 @@ struct Team{
         let team_detail_id = rs.int(forColumn: KeyTeam.team_detail_id)
         guard let name = rs.string(forColumn: KeyTeam.name)
             else{   return nil  }
-        self.init(id:Int(group_id), name:name, favorite:Int(favorite), team_detail_id:Int(team_detail_id), group_id:Int(group_id))
+        self.init(id:Int(id), name:name, favorite:Int(favorite), team_detail_id:Int(team_detail_id), group_id:Int(group_id))
     }
     
 }

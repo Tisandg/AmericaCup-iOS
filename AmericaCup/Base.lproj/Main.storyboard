@@ -716,15 +716,31 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="drawnTeam1" destination="XPD-2c-1iu" id="FbN-kh-jOd"/>
+                                    <outlet property="drawnTeam2" destination="1H9-FS-PQN" id="Guq-gA-noG"/>
+                                    <outlet property="drawnTeam3" destination="6V9-cV-haK" id="hV8-Qh-9WK"/>
+                                    <outlet property="drawnTeam4" destination="MUP-lw-2Ya" id="Pr7-Br-7zU"/>
                                     <outlet property="imageTeam1" destination="fLy-s6-InF" id="9Zm-SI-gsT"/>
                                     <outlet property="imageTeam2" destination="cux-PJ-vYa" id="aca-QU-tIK"/>
                                     <outlet property="imageTeam3" destination="LJ1-TE-iij" id="aEm-er-Mlq"/>
                                     <outlet property="imageTeam4" destination="LWS-Ox-xqk" id="HAY-2N-G8v"/>
+                                    <outlet property="lostTeam1" destination="igE-J3-fNJ" id="iEX-Fp-Q4Z"/>
+                                    <outlet property="lostTeam2" destination="fWC-dm-M71" id="e3P-SI-9ie"/>
+                                    <outlet property="lostTeam3" destination="Iyb-gd-bcL" id="K28-XI-5AR"/>
+                                    <outlet property="lostTeam4" destination="FGx-ju-Yo9" id="NrJ-I1-CgY"/>
                                     <outlet property="nameGroup" destination="GeK-b6-6dE" id="dDe-QY-jGN"/>
+                                    <outlet property="pointsTeam1" destination="QVn-JJ-8zW" id="n4f-nv-Mod"/>
+                                    <outlet property="pointsTeam2" destination="iPp-A8-JPy" id="XV8-gp-IhA"/>
+                                    <outlet property="pointsTeam3" destination="a6B-lr-Ccr" id="3Mh-BL-KCR"/>
+                                    <outlet property="pointsTeam4" destination="fwD-wU-cdG" id="tqI-Jr-upC"/>
                                     <outlet property="team1" destination="X52-Rz-i46" id="YZ4-fl-IJb"/>
                                     <outlet property="team2" destination="L26-ug-xoI" id="6pu-KG-PWn"/>
                                     <outlet property="team3" destination="qzZ-q0-asj" id="fBf-JV-4yQ"/>
                                     <outlet property="team4" destination="7G8-ar-G0g" id="Nt1-6V-CTC"/>
+                                    <outlet property="wonTeam1" destination="XZq-jq-a0V" id="4pE-EB-ghk"/>
+                                    <outlet property="wonTeam2" destination="76i-dS-doK" id="ZHJ-Dd-hC5"/>
+                                    <outlet property="wonTeam3" destination="QY4-yX-Xcx" id="8Ss-2Y-MVJ"/>
+                                    <outlet property="wonTeam4" destination="Ybe-Ox-qAs" id="73a-sI-oS6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

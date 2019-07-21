@@ -91,10 +91,67 @@ class GroupManager{
                     let rsTeams = try db.executeQuery("SELECT * FROM 'Team' WHERE group_id = (?)",values:[group.id])
                     while rsTeams.next() {
                         if let team = Team(rs: rsTeams) {
+                            print("Agregando team [",team.team_id,"] al group [",group.id,"]")
                             teams.append(team)
                         }
                     }
-                    group.teams = teams
+                    
+                    var teamsPosition:[TeamPosition] = []
+                    //Order the groups
+                    for team in teams{
+                        //print("Agregando team [",team.team_id,"]a la position")
+                        var won:Int = 0
+                        var drawn:Int = 0
+                        var lost:Int = 0
+                        var points:Int = 0
+                        
+                        // match home
+                        let reMatchHome = try db.executeQuery("SELECT * FROM 'Match' WHERE match_id_team_a = (?)",values:[team.team_id])
+                        while reMatchHome.next() {
+                            
+                            guard let score = reMatchHome.string(forColumn: "score")
+                                else{   return nil  }
+                            let arrayString = score.components(separatedBy: " - ")
+                            let goalA = Int(arrayString[0])
+                            let goalB = Int(arrayString[1])
+                            if goalA! > goalB! {
+                                won = won + 1
+                            }
+                            if goalA! < goalB! {
+                                lost = lost + 1
+                            }
+                            if(goalA! == goalB!){
+                                drawn = drawn + 1
+                            }
+                        }
+                        
+                        //match away
+                        let reMatchAway = try db.executeQuery("SELECT * FROM 'Match' WHERE match_id_team_b = (?)",values:[team.team_id])
+                        while reMatchAway.next() {
+                            guard let score = reMatchAway.string(forColumn: "score")
+                                else{   return nil  }
+                            
+                            print("Escore: "+score)
+                            let arrayString = score.components(separatedBy: " - ")
+                            let goalA = Int(arrayString[0])
+                            let goalB = Int(arrayString[1])
+                            if goalA! > goalB! {
+                                lost = lost + 1
+                            }
+                            if goalA! < goalB! {
+                                won = won + 1
+                            }
+                            if(goalA! == goalB!){
+                                drawn = drawn + 1
+                            }
+                        }
+                        points = (won*3) + (drawn*1)
+                        let teamPosition = TeamPosition.init(name: team.team_name, won: won, drawn: drawn, lost: lost, points: points)
+                        teamsPosition.append(teamPosition)
+                        
+                    }
+                    let teamPositionOrdered = teamsPosition.sorted(by: { $0.points > $1.points })
+                    group.teams = teamPositionOrdered
                     groups.append(group)
                 }
             }
