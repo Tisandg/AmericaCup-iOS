@@ -37,6 +37,14 @@ struct Team{
     }
     private var image:UIImage? = nil
     
+    init(){
+        self.team_id = -1
+        self.team_name = "nn"
+        self.favorite = -1
+        self.team_detail_id = -1
+        self.group_id = -1
+    }
+    
     init(id:Int, name:String, favorite:Int, team_detail_id:Int, group_id:Int) {
         self.team_id = id
         self.team_name = name

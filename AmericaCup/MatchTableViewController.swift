@@ -78,7 +78,6 @@ class MatchTableViewController: UITableViewController {
         cell.teamB?.text = match.team_b
         cell.result?.text = match.score
         cell.date?.text = match.match_date
-        
         cell.imageTeamA?.image = UIImage(named: match.team_a.lowercased()+".png")
         cell.imageTeamB?.image = UIImage(named: match.team_b.lowercased()+".png")
         

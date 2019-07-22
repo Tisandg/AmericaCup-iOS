@@ -14,20 +14,7 @@ class CustomTabBarViewController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UITabBar.appearance().backgroundColor = .white
-        UITabBar.appearance().tintColor = .green
-        
-        //let selectedImage1 = UIImage(name: "")?.withRenderingMode(.alwaysOriginal)
-        //let deselectedImage1 = UIImage(name: "")?.withRenderingMode(.alwaysOriginal)
-        //tabBarItem = self.tabBar.items![0]
-        //tabBarItem.image = deselectedImage1
-        //tabBarItem.selectedImage = selectedImage1
-        
-        //tabBarItem = self.tabBar.items![1]
-        
-        //tabBarItem = self.tabBar.items![2]
-        
+        UITabBar.appearance().backgroundColor = UIColor.white
         self.selectedIndex = 0
     }
     

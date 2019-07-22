@@ -34,15 +34,17 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var redB: UILabel!
     
     
+    
     let statisticsURL = "https://api.myjson.com/bins/m3nrx"
     
     //Object to hold a Book instance
     var match: Match?
+    var teamManger:TeamManager = TeamManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loadißng the view, typically from a nib.
-        //If match object is not null (e.g. an update operation), fill out the form fields with Book data
+        
+        getStatistics()
         if let match = match {
             nameTeamA.text = match.team_a
             nameTeamB.text = match.team_b
@@ -52,8 +54,21 @@ class MatchViewController: UIViewController {
             imageTeamB.image = UIImage(named: match.team_b.lowercased()+".png")
             navigationItem.title = "Match Detail"
         }
-        getStatistics()
         
+        imageTeamA.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTappedA)))
+        imageTeamB.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(imageTappedB)))
+    }
+    
+    @objc private func imageTappedA(_ recognizer: UITapGestureRecognizer) {
+        print("image tapped A")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "TeamSelected") as! TeamSelectedViewController
+        newViewController.team = teamManger.getTeam(id: match!.match_id_team_a)
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func imageTappedB(_ recognizer: UITapGestureRecognizer) {
+        print("image tapped B")
     }
 
     override func didReceiveMemoryWarning() {

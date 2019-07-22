@@ -59,6 +59,51 @@ class TeamManager{
         return favorites[index]
     }
     
+    func getTeam(id:Int)->Team{
+        //Opens a connection to DB
+        var team = Team.init()
+        guard let db = getOpenDB() else { return team }
+        do {
+            //Queries database for all books
+            let rs = try db.executeQuery("SELECT * FROM 'Team' WHERE id = (?)", values:[id])
+            //Iterates throughout the Result Set
+            while rs.next() {
+                //Creates a Book object from Result Set
+                if let teamRS = Team(rs: rs) {
+                    //Add to Books array for updating the interface
+                    team = teamRS
+                }
+            }
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        //Closes the connection to database
+        db.close()
+        return team
+    }
+    
+    func changeToFavorite(id:Int)->Int{
+        var favorite:Int = -1
+        guard let db = getOpenDB() else { return favorite }
+        do {
+            let rs = try db.executeQuery("SELECT * FROM 'Team' WHERE id = (?)", values:[id])
+            //Iterates throughout the Result Set
+            while rs.next() {
+                //Creates a Book object from Result Set
+                let aux = rs.int(forColumn: "favorite")
+                if(aux == 0){
+                    favorite = 1
+                }else{
+                    favorite = 0
+                }
+                let rs = try db.executeQuery("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values:[favorite,id])
+            }
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        return favorite
+    }
+    
     func addTeam(_ team:Team) {
         var team = team
         //Adds the record in the database
@@ -69,7 +114,7 @@ class TeamManager{
         guard let db = getOpenDB() else { return  }
         do {
             try db.executeUpdate(
-                "insert or replace into Team (id, name, group_id, favorite, team_detail_id) values (?, ?, ?, ?, ?)",
+                "insert into Team (id, name, group_id, favorite, team_detail_id) values (?, ?, ?, ?, ?)",
                 values: [team.team_id, team.team_name, team.group_id, team.favorite, team.team_detail_id]
             )
         } catch {

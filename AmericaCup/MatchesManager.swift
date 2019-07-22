@@ -54,6 +54,29 @@ class MatchesManager {
     func getMatch(at index:Int)->Match {
         return matches[index]
     }
+    
+    func getMatchesTeam(idTeam: Int) ->[Match]?{
+        //Opens a connection to DB
+        guard let db = getOpenDB() else { return nil }
+        var matches:[Match] = []
+        do {
+            //Queries database for all books
+            let rs = try db.executeQuery("SELECT * FROM Match WHERE match_id_team_a = (?) OR match_id_team_b = (?)", values: [idTeam, idTeam])
+            //Iterates throughout the Result Set
+            while rs.next() {
+                //Creates a Book object from Result Set
+                if let match = Match(rs: rs) {
+                    //Add to Books array for updating the interface
+                    matches.append(match)
+                }
+            }
+        } catch {
+            print("failed: \(error.localizedDescription)")
+        }
+        //Closes the connection to database
+        db.close()
+        return matches
+    }
 
     //Return the books collection
     private func loadMatches()->[Match] {
