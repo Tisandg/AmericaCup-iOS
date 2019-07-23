@@ -23,8 +23,6 @@ class TeamDetailViewController: UIViewController, UITableViewDataSource, UITable
         matches = matchManager.getMatchesTeam(idTeam: team!.team_id)!
         nameTeam.text = team!.team_name
         imageTeam.image = UIImage(named: team!.team_name.lowercased()+".png")
-        
-        matches = matchManager.getMatchesTeam(idTeam: team!.team_id)!
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +39,7 @@ class TeamDetailViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "matchTeamCell", for: indexPath) as! MatchesTeamTableViewCell
         let match = matches[indexPath.row]
         cell.nameA!.text = match.team_a
-        cell.nameB!.text = match.team_a
+        cell.nameB!.text = match.team_b
         cell.result!.text = match.score
         cell.date!.text = match.match_date
         cell.imageA!.image = UIImage(named: match.team_a.lowercased()+".png")

@@ -96,8 +96,9 @@ class TeamManager{
                 }else{
                     favorite = 0
                 }
-                let rs = try db.executeQuery("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values:[favorite,id])
             }
+            let rsUpdate = try db.executeQuery("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values:[favorite,id])
+            
         } catch {
             print("failed: \(error.localizedDescription)")
         }

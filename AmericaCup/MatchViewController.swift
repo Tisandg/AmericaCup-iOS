@@ -33,8 +33,6 @@ class MatchViewController: UIViewController {
     @IBOutlet weak var yellowB: UILabel!
     @IBOutlet weak var redB: UILabel!
     
-    
-    
     let statisticsURL = "https://api.myjson.com/bins/m3nrx"
     
     //Object to hold a Book instance
@@ -69,6 +67,10 @@ class MatchViewController: UIViewController {
     
     @objc private func imageTappedB(_ recognizer: UITapGestureRecognizer) {
         print("image tapped B")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "TeamSelected") as! TeamSelectedViewController
+        newViewController.team = teamManger.getTeam(id: match!.match_id_team_b)
+        self.present(newViewController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
