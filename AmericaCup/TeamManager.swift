@@ -89,18 +89,21 @@ class TeamManager{
             let rs = try db.executeQuery("SELECT * FROM 'Team' WHERE id = (?)", values:[id])
             //Iterates throughout the Result Set
             while rs.next() {
-                //Creates a Book object from Result Set
-                let aux = rs.int(forColumn: "favorite")
-                if(aux == 0){
+                var aux = rs.int(forColumn: "favorite")
+                print("respuesta: "+String(aux))
+                if(Int(aux) == 0){
                     favorite = 1
                 }else{
                     favorite = 0
                 }
             }
-            let rsUpdate = try db.executeQuery("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values:[favorite,id])
+            let rsUpdate = try db.executeUpdate("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values: [favorite,id])
+            
+            //Llamar a favorites
+            self.favorites = loadFavorites()
             
         } catch {
-            print("failed: \(error.localizedDescription)")
+            print("failed change to favorite: \(error.localizedDescription)")
         }
         return favorite
     }

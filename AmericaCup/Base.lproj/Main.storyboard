@@ -438,7 +438,7 @@
                                 <rect key="frame" x="147" y="118" width="60" height="0.0"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aMs-fC-R8h">
-                                <rect key="frame" x="139" y="87" width="90" height="80"/>
+                                <rect key="frame" x="138" y="87" width="90" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="PnB-iJ-oeu"/>
                                     <constraint firstAttribute="height" constant="80" id="Urn-gS-WH5"/>
@@ -450,15 +450,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16R-jH-nBz">
-                                <rect key="frame" x="301" y="88" width="65" height="64"/>
-                                <state key="normal" title="Favorito"/>
-                                <connections>
-                                    <action selector="teamToFavorite:" destination="8Yz-PW-LvD" eventType="touchUpInside" id="RqO-BR-WDS"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Yy-Sd-JKN">
-                                <rect key="frame" x="25" y="88" width="65" height="64"/>
+                                <rect key="frame" x="25" y="88" width="70" height="64"/>
                                 <state key="normal" title="Cancelar"/>
                                 <connections>
                                     <action selector="volverAtras:" destination="8Yz-PW-LvD" eventType="touchUpInside" id="s2d-fA-3AZ"/>
@@ -557,6 +550,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16R-jH-nBz">
+                                <rect key="frame" x="289" y="88" width="70" height="64"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="Favorito"/>
+                                <state key="highlighted" title="Favorite"/>
+                                <connections>
+                                    <action selector="teamToFavorite:" destination="8Yz-PW-LvD" eventType="touchUpInside" id="RqO-BR-WDS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -564,23 +566,23 @@
                             <constraint firstItem="NoA-q0-TVg" firstAttribute="centerX" secondItem="GIA-iv-r1D" secondAttribute="centerX" id="5qK-s6-Qpy"/>
                             <constraint firstItem="E2M-AC-KQ7" firstAttribute="bottom" secondItem="NoA-q0-TVg" secondAttribute="bottom" constant="32" id="6Ya-Wr-cYQ"/>
                             <constraint firstItem="zFz-Ak-Ylq" firstAttribute="leading" secondItem="E2M-AC-KQ7" secondAttribute="leading" constant="147" id="96z-7d-A6l"/>
+                            <constraint firstItem="aMs-fC-R8h" firstAttribute="leading" secondItem="5Yy-Sd-JKN" secondAttribute="trailing" constant="47.5" id="HyJ-UQ-GPu"/>
                             <constraint firstItem="aMs-fC-R8h" firstAttribute="centerX" secondItem="GIA-iv-r1D" secondAttribute="centerX" id="JFk-kg-kad"/>
                             <constraint firstItem="E2M-AC-KQ7" firstAttribute="trailing" secondItem="GNy-dc-SYT" secondAttribute="trailing" constant="143" id="Kdp-Sj-Jde"/>
                             <constraint firstItem="GNy-dc-SYT" firstAttribute="leading" secondItem="E2M-AC-KQ7" secondAttribute="leading" constant="142" id="OhC-AM-8Bp"/>
+                            <constraint firstItem="16R-jH-nBz" firstAttribute="leading" secondItem="aMs-fC-R8h" secondAttribute="trailing" constant="56.5" id="R1s-c0-HDT"/>
                             <constraint firstItem="zFz-Ak-Ylq" firstAttribute="centerX" secondItem="GIA-iv-r1D" secondAttribute="centerX" id="RiI-fo-4lQ"/>
-                            <constraint firstItem="aMs-fC-R8h" firstAttribute="leading" secondItem="5Yy-Sd-JKN" secondAttribute="trailing" constant="56" id="Rle-5d-ptV"/>
                             <constraint firstItem="16R-jH-nBz" firstAttribute="top" secondItem="E2M-AC-KQ7" secondAttribute="top" constant="15" id="Rqv-p2-Bdj"/>
                             <constraint firstItem="GNy-dc-SYT" firstAttribute="top" secondItem="aMs-fC-R8h" secondAttribute="bottom" constant="17" id="T7d-9U-Wb4"/>
                             <constraint firstItem="GNy-dc-SYT" firstAttribute="centerX" secondItem="GIA-iv-r1D" secondAttribute="centerX" id="TWE-Np-fee"/>
+                            <constraint firstItem="E2M-AC-KQ7" firstAttribute="trailing" secondItem="16R-jH-nBz" secondAttribute="trailing" constant="25" id="Uph-wd-YSb"/>
                             <constraint firstItem="zFz-Ak-Ylq" firstAttribute="top" secondItem="E2M-AC-KQ7" secondAttribute="top" constant="54" id="a1m-Fa-bur"/>
-                            <constraint firstItem="E2M-AC-KQ7" firstAttribute="trailing" secondItem="16R-jH-nBz" secondAttribute="trailing" constant="16" id="aNG-0P-XjE"/>
                             <constraint firstItem="E2M-AC-KQ7" firstAttribute="trailing" secondItem="oSS-Wo-C79" secondAttribute="trailing" constant="155.5" id="bMU-p9-osa"/>
                             <constraint firstItem="5Yy-Sd-JKN" firstAttribute="width" secondItem="16R-jH-nBz" secondAttribute="width" id="iNc-F3-NXe"/>
-                            <constraint firstItem="16R-jH-nBz" firstAttribute="leading" secondItem="aMs-fC-R8h" secondAttribute="trailing" constant="72" id="mVk-pp-vzU"/>
+                            <constraint firstItem="5Yy-Sd-JKN" firstAttribute="leading" secondItem="E2M-AC-KQ7" secondAttribute="leading" constant="25" id="iqK-HI-wVr"/>
                             <constraint firstItem="aMs-fC-R8h" firstAttribute="top" secondItem="E2M-AC-KQ7" secondAttribute="top" constant="23" id="nLK-mQ-Vy3"/>
                             <constraint firstItem="5Yy-Sd-JKN" firstAttribute="top" secondItem="E2M-AC-KQ7" secondAttribute="top" constant="15" id="orw-8l-0tp"/>
                             <constraint firstItem="NoA-q0-TVg" firstAttribute="top" secondItem="oSS-Wo-C79" secondAttribute="bottom" constant="8" id="rF1-GB-pHS"/>
-                            <constraint firstItem="5Yy-Sd-JKN" firstAttribute="leading" secondItem="E2M-AC-KQ7" secondAttribute="leading" constant="25" id="riF-lG-xGl"/>
                             <constraint firstItem="oSS-Wo-C79" firstAttribute="top" secondItem="GNy-dc-SYT" secondAttribute="bottom" constant="21" id="tAh-Lx-Svf"/>
                             <constraint firstItem="E2M-AC-KQ7" firstAttribute="trailing" secondItem="zFz-Ak-Ylq" secondAttribute="trailing" constant="168" id="xAf-nB-mQq"/>
                             <constraint firstItem="oSS-Wo-C79" firstAttribute="leading" secondItem="E2M-AC-KQ7" secondAttribute="leading" constant="155.5" id="xnF-Gp-rqs"/>
@@ -606,6 +608,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonFavorite" destination="16R-jH-nBz" id="C9D-z6-DTm"/>
                         <outlet property="cancel" destination="E58-lH-uet" id="EiJ-CF-xez"/>
                         <outlet property="favorites" destination="NYo-zc-Ohv" id="Ekq-TK-QGH"/>
                         <outlet property="imageTeam" destination="aMs-fC-R8h" id="2h7-O9-lUq"/>

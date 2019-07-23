@@ -62,6 +62,7 @@ class MatchViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "TeamSelected") as! TeamSelectedViewController
         newViewController.team = teamManger.getTeam(id: match!.match_id_team_a)
+        
         self.present(newViewController, animated: true, completion: nil)
     }
     

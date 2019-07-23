@@ -14,11 +14,14 @@ class TeamSelectedViewController: UIViewController, UITableViewDataSource, UITab
     var matches:[Match] = []
     var teamManager:TeamManager = TeamManager()
     var matchManager:MatchesManager = MatchesManager()
+    //var delegate: TeamViewControllerDelegate?
     
     @IBOutlet weak var imageTeam: UIImageView!
     @IBOutlet weak var nameTeam: UILabel!
     @IBOutlet weak var cancel: UIBarButtonItem!
     @IBOutlet weak var favorites: UIBarButtonItem!
+    @IBOutlet weak var buttonFavorite: UIButton!
+    
     
     @IBAction func volverMatch(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
@@ -34,8 +37,15 @@ class TeamSelectedViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     @IBAction func teamToFavorite(_ sender: UIButton) {
+        //let respuesta = delegate?.changeToFavorite(team!)
         let respuesta:Int = teamManager.changeToFavorite(id: team!.team_id)
-        print("respuesta ",respuesta)
+        print("respuesta TeamSelected",respuesta)
+        if(respuesta == 1){
+            self.buttonFavorite.setTitle("Quitar", for: UIControlState.normal)
+        }else{
+            self.buttonFavorite.setTitle("Favorites", for: UIControlState.normal)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -43,14 +53,15 @@ class TeamSelectedViewController: UIViewController, UITableViewDataSource, UITab
         matches = matchManager.getMatchesTeam(idTeam: team!.team_id)!
         imageTeam.image = UIImage(named: team!.team_name.lowercased()+".png")
         nameTeam.text = team!.team_name
-        // Do any additional setup after loading the view.
+        if(team!.favorite == 1){
+            self.buttonFavorite.setTitle("Quitar", for: UIControlState.normal)
+        }else{
+            self.buttonFavorite.setTitle("Favorites", for: UIControlState.normal)
+        }
     }
     
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,7 +69,6 @@ class TeamSelectedViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "matchTeamCell") as! MatchesTeamTableViewCell
         let cell = tableView.dequeueReusableCell(withIdentifier: "matchTeamCell", for: indexPath) as! MatchesTeamTableViewCell
         let match = matches[indexPath.row]
         cell.nameA!.text = match.team_a
@@ -71,3 +81,7 @@ class TeamSelectedViewController: UIViewController, UITableViewDataSource, UITab
     }
 
 }
+
+/*protocol TeamViewControllerDelegate {
+    func changeToFavorite(_ team: Team) -> Int
+}*/

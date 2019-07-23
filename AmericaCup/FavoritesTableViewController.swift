@@ -14,6 +14,15 @@ class FavoritesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Favorites charged")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.teamManager = TeamManager()
+        self.tableView.reloadData()
+        super.viewDidAppear(animated)
+        print("Aparecio")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,3 +75,14 @@ class FavoritesTableViewController: UITableViewController {
     }
 
 }
+
+/*extension FavoritesTableViewController:TeamViewControllerDelegate {
+
+    func changeToFavorite(_ team: Team) -> Int{
+        let result = teamManager.changeToFavorite(id: team.team_id)
+        print("Result favorites",result)
+        tableView.reloadData()
+        return result
+    }
+}*/
+
