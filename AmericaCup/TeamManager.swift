@@ -59,6 +59,18 @@ class TeamManager{
         return favorites[index]
     }
     
+    func removeToFavorites(id: Int){
+        guard let db = getOpenDB() else { return }
+        do {
+            let rsUpdate = try db.executeUpdate("UPDATE 'Team' set favorite = (?) WHERE id = (?)", values: [0,id])
+            //Update favorites
+            print("Remove to favorites")
+            self.favorites = loadFavorites()
+        } catch {
+            print("failed change to favorite: \(error.localizedDescription)")
+        }
+    }
+    
     func getTeam(id:Int)->Team{
         //Opens a connection to DB
         var team = Team.init()

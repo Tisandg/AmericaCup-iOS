@@ -10,11 +10,8 @@ import UIKit
 
 class CustomTabBarViewController: UITabBarController{
     
-    //var tabBarItem = UITabBarItem()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        UITabBar.appearance().backgroundColor = UIColor.white
         self.selectedIndex = 0
     }
     

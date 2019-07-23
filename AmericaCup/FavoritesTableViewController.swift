@@ -55,6 +55,17 @@ class FavoritesTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Presiono eliminar")
+            //Delete the book from the array
+            let team = teamManager.getFavorite(at: indexPath.row)
+            self.teamManager.changeToFavorite(id: team.team_id)
+            tableView.reloadData()
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     // Prepare the segue before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
