@@ -111,7 +111,6 @@ class MatchesManager {
         do {
             //Performs an update operation on the database
             try db.executeUpdate(
-                //Add a Book record
                 "insert or replace into Match (match_id, match_id_team_a, match_id_team_b, team_a, team_b, score, match_date, status, group_id) values (?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 values: [match.match_id, match.match_id_team_a, match.match_id_team_b, match.team_a, match.team_b, match.score, match.match_date, match.status,match.group_id]
             )

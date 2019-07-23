@@ -1,0 +1,6 @@
+framework module Pods_AmericaCup {
+  umbrella header "Pods-AmericaCup-umbrella.h"
+
+  export *
+  module * { export * }
+}
